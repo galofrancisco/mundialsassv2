@@ -1,0 +1,39 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: $bgPrimario;
+    nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 100px;
+        ul{
+            display: flex;
+            flex-direction: row;
+            padding-left: 0px;
+            li{
+                list-style-type: none;
+                border-radius: 5px;
+                margin: 7px;
+                transition: all 1s;
+                &:hover{
+                    background-color:$bgSegundario;
+                }
+                a{
+                    text-decoration: none;
+                    padding: 8px;
+                    color: rgb(255, 255, 255);
+                    font-size: 20px;
+                    font-family: cursive;
+                    transition: all 1s;
+                    &:hover{
+                        font-size: 23px;
+                        color: black;
+                    }
+                }
+            }
+            
+        }
+    }
+}

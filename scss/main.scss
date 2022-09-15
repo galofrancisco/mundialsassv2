@@ -1,0 +1,99 @@
+.gridContainer{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns:100%;
+    grid-template-areas: 
+    "title"
+    "fotos";
+}
+.title{
+    grid-area: title;
+    text-align: center;
+    font-family: cursive;
+}
+
+// MIXIN PARA TAMAÑO IMG
+
+@mixin tamaños($width, $height,$radius) {
+    height: $height;
+    width: $width;
+    border-radius: $radius;
+}
+// -------------------
+
+.fotos{
+    grid-area: fotos;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.imgIndex{
+    @include tamaños(600px,400px ,40px )
+}
+
+// Main envivo
+
+h1{
+    font-family: cursive;
+    text-align: center;
+}
+// Main Estadios
+
+.divEstadios{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas:
+    "parteA"
+    "parteB"
+    "parteC";
+}
+.parteA{
+    @extend.fotos;
+    grid-area: parteA;
+
+}
+
+.parteB{
+    @extend.fotos;
+    grid-area: parteB;
+    align-items: center;
+    justify-content: center;
+    margin: 30px
+}
+.parteC{
+    @extend.fotos;
+    grid-area: parteC;
+
+}
+
+.imgEstadios{
+    @include tamaños(400px,200px ,40px )
+}
+
+
+// MAIN SELECCIONES
+
+h2{
+    font-family: cursive;
+}
+
+$colorescontinentes:(
+    america:rgb(47, 47, 206),
+    europa:rgb(136, 136, 67),
+    africa:rgb(226, 121, 51),
+    asia:rgb(89, 148, 89),
+);
+
+.america{
+    background-color: map-get($colorescontinentes,america );
+}
+.europa{
+    background-color: map-get($colorescontinentes,europa);
+}
+.africa{
+    background-color: map-get($colorescontinentes,africa);
+}
+.asia{
+    background-color: map-get($colorescontinentes,asia);
+}
